@@ -1,5 +1,3 @@
-declare var Chart: any;
-
 export function chartPieDemo() {
   (Chart.defaults.global.defaultFontFamily = 'Nunito'),
     '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
