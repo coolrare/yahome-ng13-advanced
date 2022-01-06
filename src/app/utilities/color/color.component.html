@@ -12,7 +12,8 @@
 <div class="row">
 
   <!-- First Column -->
-  <div class="col-lg-4" *ngIf="type === '1' || type === ''">
+  <!-- <div class="col-lg-4" *ngIf="type === '1' || type === ''"> -->
+  <div class="col-lg-4" *ngIf="(type$ | async) === '1' || (type$ | async) === ''">
 
     <!-- Custom Text Color Utilities -->
     <div class="card shadow mb-4">

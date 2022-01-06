@@ -1,5 +1,7 @@
+import { map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-color',
@@ -9,6 +11,11 @@ import { ActivatedRoute } from '@angular/router';
 export class ColorComponent implements OnInit {
 
   type = '';
+
+  type$: Observable<string> = this.route.paramMap
+    .pipe(
+      map(paramMap => paramMap.get('type') || '')
+    )
 
   constructor(private route: ActivatedRoute) { }
 
