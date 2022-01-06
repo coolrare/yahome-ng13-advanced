@@ -69,6 +69,11 @@ const routes: Routes = [
     ],
   },
   {
+    path: 'pages',
+    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+    // import { PagesModule } from './pages/pages.module'
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },
