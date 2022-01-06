@@ -1,15 +1,16 @@
 import { TableService } from './table.service';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, shareReplay, switchMap } from 'rxjs/operators';
+import { map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { interval, Subscription, timer } from 'rxjs';
 
 @Component({
   selector: 'app-tables',
   templateUrl: './tables.component.html',
   styleUrls: ['./tables.component.css'],
 })
-export class TablesComponent implements OnInit {
+export class TablesComponent implements OnInit, OnDestroy {
   list: any[] = [];
 
   display = false;
@@ -22,12 +23,24 @@ export class TablesComponent implements OnInit {
     shareReplay(1)
   );
 
+  timer$ = interval(1000).pipe(
+    tap(data => console.log(data))
+  );
+
+    subscription = new Subscription();
+
   constructor(
     private route: ActivatedRoute,
     private tableService: TableService
   ) {}
 
   ngOnInit(): void {
+    const sub =  interval(1000).subscribe(data => {
+      console.log(data);
+    });
+
+    this.subscription.add(sub);
+
     // [1, 2, 3].map(data => data + 1); // [2, 3, 4];
     // 示範 operator
     // this.route.queryParamMap
@@ -56,5 +69,9 @@ export class TablesComponent implements OnInit {
     //       console.log(this.list);
     //     });
     // });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
