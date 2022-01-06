@@ -13,6 +13,8 @@ import { BorderComponent } from './utilities/border/border.component';
 import { OtherComponent } from './utilities/other/other.component';
 import { ColorComponent } from './utilities/color/color.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LayoutComponent } from './layout/layout.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     AnimationComponent,
     BorderComponent,
     OtherComponent,
-    ColorComponent
+    ColorComponent,
+    LayoutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

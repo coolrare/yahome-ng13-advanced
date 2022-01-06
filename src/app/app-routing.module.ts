@@ -1,3 +1,5 @@
+import { LayoutComponent } from './layout/layout.component';
+import { LoginComponent } from './login/login.component';
 import { ColorComponent } from './utilities/color/color.component';
 import { OtherComponent } from './utilities/other/other.component';
 import { BorderComponent } from './utilities/border/border.component';
@@ -13,66 +15,76 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
-  },
-  {
-    path: 'page-a',
-    component: PageAComponent,
-  },
-  {
-    path: 'page-b',
-    component: PageBComponent,
-  },
-  {
-    path: 'charts',
-    // component: ChartsComponent,
-    loadChildren: () => import('./charts/charts.module').then(m => m.ChartsModule)
-  },
-  {
-    path: 'tables',
-    component: TablesComponent,
-  },
-  {
-    path: 'utilities',
+    component: LayoutComponent,
     children: [
       {
         path: '',
-        // component: OtherComponent
-        redirectTo: 'other',
-        pathMatch: 'full'
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
       },
       {
-        path: 'animation', // utilities/animation
-        component: AnimationComponent,
+        path: 'dashboard',
+        component: DashboardComponent,
       },
       {
-        path: 'border', // utilities/border
-        component: BorderComponent,
+        path: 'page-a',
+        component: PageAComponent,
       },
       {
-        path: 'other',
-        component: OtherComponent
+        path: 'page-b',
+        component: PageBComponent,
       },
       {
-        path: 'color',
-        component: ColorComponent
+        path: 'charts',
+        // component: ChartsComponent,
+        loadChildren: () => import('./charts/charts.module').then(m => m.ChartsModule)
       },
       {
-        path: 'color/:type',
-        component: ColorComponent
-      }
-    ],
-  },
-  {
-    path: 'pages',
-    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
-    // import { PagesModule } from './pages/pages.module'
+        path: 'tables',
+        component: TablesComponent,
+      },
+      {
+        path: 'utilities',
+        children: [
+          {
+            path: '',
+            // component: OtherComponent
+            redirectTo: 'other',
+            pathMatch: 'full'
+          },
+          {
+            path: 'animation', // utilities/animation
+            component: AnimationComponent,
+          },
+          {
+            path: 'border', // utilities/border
+            component: BorderComponent,
+          },
+          {
+            path: 'other',
+            component: OtherComponent
+          },
+          {
+            path: 'color',
+            component: ColorComponent
+          },
+          {
+            path: 'color/:type',
+            component: ColorComponent
+          }
+        ],
+      },
+      {
+        path: 'pages',
+        loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+        // import { PagesModule } from './pages/pages.module'
+      },
+    ]
   },
   {
     path: '**',
