@@ -31,7 +31,8 @@ const routes: Routes = [
   },
   {
     path: 'charts',
-    component: ChartsComponent,
+    // component: ChartsComponent,
+    loadChildren: () => import('./charts/charts.module').then(m => m.ChartsModule)
   },
   {
     path: 'tables',

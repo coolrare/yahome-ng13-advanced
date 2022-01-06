@@ -7,7 +7,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageAComponent } from './page-a/page-a.component';
 import { PageBComponent } from './page-b/page-b.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ChartsComponent } from './charts/charts.component';
 import { TablesComponent } from './tables/tables.component';
 import { AnimationComponent } from './utilities/animation/animation.component';
 import { BorderComponent } from './utilities/border/border.component';
@@ -22,7 +21,6 @@ import { HttpClientModule } from '@angular/common/http';
     PageAComponent,
     PageBComponent,
     NotFoundComponent,
-    ChartsComponent,
     TablesComponent,
     AnimationComponent,
     BorderComponent,
