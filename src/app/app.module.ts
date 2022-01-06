@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageAComponent } from './page-a/page-a.component';
 import { PageBComponent } from './page-b/page-b.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     PageAComponent,
-    PageBComponent
+    PageBComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -17,10 +17,25 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}">
+        <a class="nav-link" routerLink="/">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/page-a']">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Page A</span></a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/', 'page-b']">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Page B</span></a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/', 'page-c']">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Page C</span></a>
       </li>
 
       <!-- Divider -->
