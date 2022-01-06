@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { ColorComponent } from './utilities/color/color.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   },
   {
     path: '',
+    canActivate: [ AuthGuard ],
     component: LayoutComponent,
     children: [
       {
