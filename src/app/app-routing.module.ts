@@ -1,3 +1,7 @@
+import { ColorComponent } from './utilities/color/color.component';
+import { OtherComponent } from './utilities/other/other.component';
+import { BorderComponent } from './utilities/border/border.component';
+import { AnimationComponent } from './utilities/animation/animation.component';
 import { TablesComponent } from './tables/tables.component';
 import { ChartsComponent } from './charts/charts.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -11,32 +15,59 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
   },
   {
     path: 'page-a',
-    component: PageAComponent
+    component: PageAComponent,
   },
   {
     path: 'page-b',
-    component: PageBComponent
+    component: PageBComponent,
   },
   {
     path: 'charts',
-    component: ChartsComponent
+    component: ChartsComponent,
   },
   {
     path: 'tables',
-    component: TablesComponent
+    component: TablesComponent,
+  },
+  {
+    path: 'utilities',
+    children: [
+      {
+        path: '',
+        // component: OtherComponent
+        redirectTo: 'other',
+        pathMatch: 'full'
+      },
+      {
+        path: 'animation', // utilities/animation
+        component: AnimationComponent,
+      },
+      {
+        path: 'border', // utilities/border
+        component: BorderComponent,
+      },
+      {
+        path: 'other',
+        component: OtherComponent
+      },
+      {
+        path: 'color',
+        component: ColorComponent
+      }
+    ],
   },
   {
     path: '**',
-    component: NotFoundComponent
-  }
+    component: NotFoundComponent,
+  },
   // {
   //   path: '**',
   //   redirectTo: 'dashboard',
@@ -46,6 +77,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

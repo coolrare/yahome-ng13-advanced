@@ -10,6 +10,10 @@ import { PageBComponent } from './page-b/page-b.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ChartsComponent } from './charts/charts.component';
 import { TablesComponent } from './tables/tables.component';
+import { AnimationComponent } from './utilities/animation/animation.component';
+import { BorderComponent } from './utilities/border/border.component';
+import { OtherComponent } from './utilities/other/other.component';
+import { ColorComponent } from './utilities/color/color.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { TablesComponent } from './tables/tables.component';
     PageBComponent,
     NotFoundComponent,
     ChartsComponent,
-    TablesComponent
+    TablesComponent,
+    AnimationComponent,
+    BorderComponent,
+    OtherComponent,
+    ColorComponent
   ],
   imports: [
     BrowserModule,
