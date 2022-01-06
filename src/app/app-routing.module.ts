@@ -61,6 +61,10 @@ const routes: Routes = [
       {
         path: 'color',
         component: ColorComponent
+      },
+      {
+        path: 'color/:type',
+        component: ColorComponent
       }
     ],
   },

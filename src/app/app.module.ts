@@ -14,6 +14,7 @@ import { AnimationComponent } from './utilities/animation/animation.component';
 import { BorderComponent } from './utilities/border/border.component';
 import { OtherComponent } from './utilities/other/other.component';
 import { ColorComponent } from './utilities/color/color.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ColorComponent } from './utilities/color/color.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
