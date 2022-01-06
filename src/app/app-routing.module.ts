@@ -1,3 +1,5 @@
+import { TablesComponent } from './tables/tables.component';
+import { ChartsComponent } from './charts/charts.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PageBComponent } from './page-b/page-b.component';
 import { PageAComponent } from './page-a/page-a.component';
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'page-b',
     component: PageBComponent
+  },
+  {
+    path: 'charts',
+    component: ChartsComponent
+  },
+  {
+    path: 'tables',
+    component: TablesComponent
   },
   {
     path: '**',
