@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +7,11 @@ import { FormBuilder } from '@angular/forms';
 export class UserService {
 
   form = this.formBuilder.group({
-    firstName: this.formBuilder.control('Mike'),
-    lastName: this.formBuilder.control(''),
+    firstName: this.formBuilder.control('Mike', [
+      Validators.required,
+      Validators.minLength(4)
+    ]),
+    lastName: this.formBuilder.control('', Validators.required),
     password: this.formBuilder.group({
       password: this.formBuilder.control(''),
       repeatPassword: this.formBuilder.control(''),

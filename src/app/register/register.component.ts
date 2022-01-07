@@ -1,5 +1,11 @@
 import { UserService } from './../user.service';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -19,10 +25,16 @@ export class RegisterComponent implements OnInit {
   }
 
   // constructor(private formBuilder: FormBuilder) {}
-  constructor(private userService: UserService, private formBuilder: FormBuilder) { }
+  constructor(
+    private userService: UserService,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
-    this.form.addControl('email', this.formBuilder.control(''));
+    this.form.addControl(
+      'email',
+      this.formBuilder.control('', [Validators.required, Validators.email])
+    );
   }
 
   remove(index: number) {

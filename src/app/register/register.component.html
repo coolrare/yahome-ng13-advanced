@@ -15,6 +15,9 @@
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <input formControlName="firstName" type="text" class="form-control form-control-user"
                     id="exampleFirstName" placeholder="First Name">
+                  <div *ngIf="form.get('firstName')?.invalid">
+                    <div *ngIf="form.get('firstName')?.errors!['required']">請輸入 First Name</div>"
+                  </div>
                 </div>
                 <div class="col-sm-6">
                   <input formControlName="lastName" type="text" class="form-control form-control-user"
@@ -22,8 +25,8 @@
                 </div>
               </div>
               <div class="form-group">
-                <input formControlName="email" type="email" class="form-control form-control-user" id="exampleInputEmail"
-                  placeholder="Email Address">
+                <input formControlName="email" type="email" class="form-control form-control-user"
+                  id="exampleInputEmail" placeholder="Email Address">
               </div>
               <div class="form-group row" formGroupName="password">
                 <div class="col-sm-6 mb-3 mb-sm-0">
