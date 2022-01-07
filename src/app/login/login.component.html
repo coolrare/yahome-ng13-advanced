@@ -26,9 +26,10 @@
                       type="email"
                       class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp"
                       placeholder="Enter Email Address...">
-                    <div *ngIf="tUsername.invalid && tUsername.errors">
+                    <div *ngIf="tUsername.dirty && tUsername.invalid && tUsername.errors">
                       <div *ngIf="tUsername.errors['required']">請輸入 Email</div>
                       <div *ngIf="tUsername.errors['email']">Email 格式錯誤</div>
+                      <!-- <div *ngIf="tUsername.errors['usernameExist']">Email 已存在</div> -->
                     </div>
                   </div>
                   <div class="form-group">
@@ -40,7 +41,7 @@
                       minlength="6"
                       type="password"
                       class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
-                    <div *ngIf="tPassword.invalid && tPassword.errors">
+                    <div *ngIf="tPassword.dirty && tPassword.invalid && tPassword.errors">
                       <div *ngIf="tPassword.errors['required']">請輸入密碼</div>
                       <div *ngIf="tPassword.errors['minlength']">
                         長度不足
