@@ -1,3 +1,4 @@
+import { FormControl } from '@angular/forms';
 import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,6 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class UserProfileComponent implements OnInit {
 
   form = this.userService.createUserModel();
+
+  get firstNameControl() {
+    return this.form.get('firstName') as FormControl
+  }
 
   constructor(private userService: UserService) { }
 
@@ -31,6 +36,7 @@ export class UserProfileComponent implements OnInit {
     this.form.reset();
 
     this.form.reset({
+      firstName: 'Will',
       lastName: 'Huang',
     });
 
