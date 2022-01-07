@@ -21,6 +21,7 @@
                       name="username"
                       #tUsername="ngModel"
                       ngModel
+                      disabled
                       required
                       email
                       type="email"
@@ -61,6 +62,8 @@
                   </div>
                   <div>username: {{ tUsername.value }}</div>
                   <div>password: {{ tPassword.value }}</div>
+                  <div>{{ form.value | json }}</div>
+                  <div>{{ form.control.getRawValue() | json }}</div>
                   <button
                     [disabled]="form.invalid"
                     type="button" (click)="login(tUsername.value, tPassword.value, form.value)"
