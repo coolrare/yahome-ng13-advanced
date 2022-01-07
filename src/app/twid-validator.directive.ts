@@ -3,7 +3,7 @@ import { NG_VALIDATORS, AbstractControl, Validator, ValidationErrors } from '@an
 
 // <input ngModel twid required />
 
-const twidValidator = (params: any) => {
+export const twidValidator = (params: any) => {
   return (control: AbstractControl) => {
     return control.value.length === 10 ? null : { twid: true };
   }

@@ -6,6 +6,7 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
+import { twidValidator } from './twid-validator.directive';
 
 export function forbiddenNameValidator(control: AbstractControl) {
   const nameRe = /Will/;
@@ -30,6 +31,7 @@ const control = new FormControl('', [
   forbiddenName_Mike,
   forbiddenName_Admin,
   forbiddenName_Will,
+  twidValidator(10)
 ]);
 
 @Injectable({
