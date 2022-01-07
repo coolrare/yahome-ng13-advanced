@@ -55,10 +55,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
     }
   }
 
-  login(username: string, password: string) {
-    return;
-
-    console.log(username, password);
+  login(username: string, password: string, formValue: any) {
+    console.log(username, password, formValue);
     localStorage.setItem('token', 'xxx');
     this.router.navigateByUrl('/');
   }

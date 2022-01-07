@@ -15,7 +15,7 @@
                 <div class="text-center">
                   <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                 </div>
-                <form class="user">
+                <form class="user" #form="ngForm">
                   <div class="form-group">
                     <input
                       name="username"
@@ -61,7 +61,9 @@
                   </div>
                   <div>username: {{ tUsername.value }}</div>
                   <div>password: {{ tPassword.value }}</div>
-                  <button type="button" (click)="login(tUsername.value, tPassword.value)"
+                  <button
+                    [disabled]="form.invalid"
+                    type="button" (click)="login(tUsername.value, tPassword.value, form.value)"
                     class="btn btn-primary btn-user btn-block">
                     Login
                   </button>
