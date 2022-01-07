@@ -1,3 +1,4 @@
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './auth.guard';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
@@ -37,6 +38,10 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent,
+      },
+      {
+        path: 'user-profile',
+        component: UserProfileComponent,
       },
       {
         path: 'page-a',

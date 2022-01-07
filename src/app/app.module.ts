@@ -17,6 +17,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { RegisterComponent } from './register/register.component';
     ColorComponent,
     LayoutComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
