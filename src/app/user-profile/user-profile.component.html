@@ -1,3 +1,11 @@
 <div>
   {{ form.value | json }}
 </div>
+<ul>
+  <li>dirty: {{ form.dirty }}</li>
+  <li>pristine: {{ form.pristine }}</li>
+  <li>touched: {{ form.touched }}</li>
+  <li>untouched: {{ form.untouched }}</li>
+  <li>valid: {{ form.valid }}</li>
+  <li>invalid: {{ form.invalid }}</li>
+</ul>

@@ -16,6 +16,25 @@ export class UserProfileComponent implements OnInit {
 
     this.form.removeControl('password');
 
+    this.form.setValue({
+      firstName: 'Test',
+      lastName: 'Demo',
+      interest: [ 'A', 'B', 'C']
+    });
+
+    this.form.patchValue({
+      firstName: 'Mike',
+    });
+
+    this.form.markAsDirty();
+
+    this.form.reset();
+
+    this.form.reset({
+      lastName: 'Huang',
+    });
+
+
   }
 
 }
