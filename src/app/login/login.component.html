@@ -60,6 +60,36 @@
                       <label class="custom-control-label" for="customCheck">Remember Me</label>
                     </div>
                   </div>
+
+                  <div ngModelGroup="values">
+                    <div class="form-group">
+                      <input
+                        name="value1"
+                        ngModel
+                        type="text"
+                        class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                      <input
+                        name="value2"
+                        ngModel
+                        type="text"
+                        class="form-control">
+                    </div>
+                  </div>
+
+                  <!--
+                    {
+                      username: '',
+                      password: '',
+                      values: {
+                        value1: '',
+                        value2: ''
+                      }
+                    }
+                  -->
+
                   <div>username: {{ tUsername.value }}</div>
                   <div>password: {{ tPassword.value }}</div>
                   <div>{{ form.value | json }}</div>
