@@ -13,7 +13,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login() {
+  login(username: string, password: string) {
+    console.log(username, password);
     localStorage.setItem('token', 'xxx');
     this.router.navigateByUrl('/');
   }
