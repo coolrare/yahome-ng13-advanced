@@ -61,7 +61,7 @@
                     </div>
                   </div>
 
-                  <div ngModelGroup="values">
+                  <div ngModelGroup="values" #gValues="ngModelGroup">
                     <div class="form-group">
                       <input
                         name="value1"
@@ -76,6 +76,10 @@
                         ngModel
                         type="text"
                         class="form-control">
+                    </div>
+
+                    <div>
+                      {{ gValues.value | json }}
                     </div>
                   </div>
 
