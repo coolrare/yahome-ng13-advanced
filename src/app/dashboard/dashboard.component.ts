@@ -1,3 +1,4 @@
+import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { chartAreaDemo } from '../chart-area-demo';
@@ -10,11 +11,13 @@ import { chartPieDemo } from '../chart-pie-demo';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
     chartAreaDemo();
     chartPieDemo();
+
+    console.log(this.userService.form.value);
   }
 
   goToTable() {

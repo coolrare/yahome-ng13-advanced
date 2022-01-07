@@ -1,3 +1,4 @@
+import { UserService } from './../user.service';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,19 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  form = this.formBuilder.group({
-    firstName: this.formBuilder.control('Mike'),
-    lastName: this.formBuilder.control(''),
-    password: this.formBuilder.group({
-      password: this.formBuilder.control(''),
-      repeatPassword: this.formBuilder.control(''),
-    }),
-    interest: this.formBuilder.array([
-      this.formBuilder.control('Angular'),
-      this.formBuilder.control('HTML'),
-      this.formBuilder.control('CSS'),
-    ]),
-  });
+  form = this.userService.form;
 
   get interestControlArray(): FormArray {
     return this.form.get('interest') as FormArray;
@@ -29,7 +18,8 @@ export class RegisterComponent implements OnInit {
     return (this.form.get('interest') as FormArray).controls as FormControl[];
   }
 
-  constructor(private formBuilder: FormBuilder) {}
+  // constructor(private formBuilder: FormBuilder) {}
+  constructor(private userService: UserService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.form.addControl('email', this.formBuilder.control(''));
