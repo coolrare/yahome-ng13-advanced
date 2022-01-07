@@ -11,7 +11,10 @@ export class UserService {
       Validators.required,
       Validators.minLength(4)
     ]),
-    lastName: this.formBuilder.control('', Validators.required),
+    lastName: this.formBuilder.control({
+      value: '',
+      disabled: true
+    }, Validators.required),
     password: this.formBuilder.group({
       password: this.formBuilder.control(''),
       repeatPassword: this.formBuilder.control(''),
