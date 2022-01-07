@@ -17,11 +17,11 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: '',
-    canActivate: [ AuthGuard ],
+    canActivate: [AuthGuard],
     component: LayoutComponent,
     children: [
       {
@@ -44,7 +44,8 @@ const routes: Routes = [
       {
         path: 'charts',
         // component: ChartsComponent,
-        loadChildren: () => import('./charts/charts.module').then(m => m.ChartsModule)
+        loadChildren: () =>
+          import('./charts/charts.module').then((m) => m.ChartsModule),
       },
       {
         path: 'tables',
@@ -57,7 +58,7 @@ const routes: Routes = [
             path: '',
             // component: OtherComponent
             redirectTo: 'other',
-            pathMatch: 'full'
+            pathMatch: 'full',
           },
           {
             path: 'animation', // utilities/animation
@@ -69,24 +70,25 @@ const routes: Routes = [
           },
           {
             path: 'other',
-            component: OtherComponent
+            component: OtherComponent,
           },
           {
             path: 'color',
-            component: ColorComponent
+            component: ColorComponent,
           },
           {
             path: 'color/:type',
-            component: ColorComponent
-          }
+            component: ColorComponent,
+          },
         ],
       },
       {
         path: 'pages',
-        loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+        loadChildren: () =>
+          import('./pages/pages.module').then((m) => m.PagesModule),
         // import { PagesModule } from './pages/pages.module'
       },
-    ]
+    ],
   },
   {
     path: '**',
@@ -100,7 +102,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      //  enableTracing: true
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
