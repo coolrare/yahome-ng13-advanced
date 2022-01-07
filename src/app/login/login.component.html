@@ -16,15 +16,12 @@
                   <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                 </div>
                 <form class="user" #form="ngForm">
+                  <input name="id" [twid]="10" ngModel #tId="ngModel">
+                  <div *ngIf="tId.dirty && tId.invalid && tId.errors">
+                    <div *ngIf="tId.errors['twid']">格式錯誤</div>
+                  </div>
                   <div class="form-group">
-                    <input
-                      name="username"
-                      #tUsername="ngModel"
-                      ngModel
-                      disabled
-                      required
-                      email
-                      type="email"
+                    <input name="username" #tUsername="ngModel" ngModel disabled required email type="email"
                       class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp"
                       placeholder="Enter Email Address...">
                     <div *ngIf="tUsername.dirty && tUsername.invalid && tUsername.errors">
@@ -34,22 +31,16 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <input
-                      name="password"
-                      #tPassword="ngModel"
-                      ngModel
-                      required
-                      minlength="6"
-                      type="password"
+                    <input name="password" #tPassword="ngModel" ngModel required minlength="6" type="password"
                       class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                     <div *ngIf="tPassword.dirty && tPassword.invalid && tPassword.errors">
                       <div *ngIf="tPassword.errors['required']">請輸入密碼</div>
                       <div *ngIf="tPassword.errors['minlength']">
                         長度不足
                         (
-                          {{ tPassword.errors['minlength']['actualLength']}}
-                          /
-                          {{ tPassword.errors['minlength']['requiredLength']}}
+                        {{ tPassword.errors['minlength']['actualLength']}}
+                        /
+                        {{ tPassword.errors['minlength']['requiredLength']}}
                         )
                       </div>
                     </div>
@@ -63,19 +54,11 @@
 
                   <div ngModelGroup="values" #gValues="ngModelGroup">
                     <div class="form-group">
-                      <input
-                        name="value1"
-                        ngModel
-                        type="text"
-                        class="form-control">
+                      <input name="value1" ngModel type="text" class="form-control">
                     </div>
 
                     <div class="form-group">
-                      <input
-                        name="value2"
-                        ngModel
-                        type="text"
-                        class="form-control">
+                      <input name="value2" ngModel type="text" class="form-control">
                     </div>
 
                     <div>
@@ -98,17 +81,13 @@
                   <div>password: {{ tPassword.value }}</div>
                   <div>{{ form.value | json }}</div>
                   <div>{{ form.control.getRawValue() | json }}</div>
-                  <button
-                    [disabled]="form.invalid"
-                    type="button" (click)="login(tUsername.value, tPassword.value, form.value)"
+                  <button [disabled]="form.invalid" type="button"
+                    (click)="login(tUsername.value, tPassword.value, form.value)"
                     class="btn btn-primary btn-user btn-block">
                     Login
                   </button>
                   <!-- tPassword.reset() -->
-                  <button
-                    type="button"
-                    (click)="form.reset()"
-                    class="btn btn-primary btn-user btn-block">
+                  <button type="button" (click)="form.reset()" class="btn btn-primary btn-user btn-block">
                     Reset
                   </button>
 

@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { TwidValidatorDirective } from './twid-validator.directive';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     LayoutComponent,
     LoginComponent,
     RegisterComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    TwidValidatorDirective
   ],
   imports: [
     BrowserModule,
