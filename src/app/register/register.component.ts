@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { repeatPasswordValidator } from '../repeat-password.validator';
 
 @Component({
   selector: 'app-register',
@@ -31,6 +32,10 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.form.addValidators([
+      repeatPasswordValidator('password.password', 'password.repeatPassword'),
+    ]);
+
     // this.form.get('firstName')?.disable();
     this.form.addControl(
       'email',
