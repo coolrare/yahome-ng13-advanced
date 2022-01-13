@@ -25,3 +25,8 @@
 - [[Angular 大師之路] 在 @NgModule 的 providers: [] 自由更換注入內容 (2)](https://fullstackladder.dev/blog/2018/11/05/mastering-angular-21-ngmodule-providers-2/)
 - [[Angular 大師之路] 各種在程式中取的注入 token 實體的方法](https://fullstackladder.dev/blog/2018/11/06/mastering-angular-22-get-injection-tokens/)
 - [[Angular 大師之路] 認識 InjectionToken](https://fullstackladder.dev/blog/2018/11/07/mastering-angular-23-injection-tokens/)
+
+## 多語系
+
+- [Angular Internationalization](https://angular.io/guide/i18n)
+- [ngx-translate](https://github.com/ngx-translate/core)
