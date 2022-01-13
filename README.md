@@ -30,3 +30,7 @@
 
 - [Angular Internationalization](https://angular.io/guide/i18n)
 - [ngx-translate](https://github.com/ngx-translate/core)
+
+## 表單驗證器
+
+- [ngx-validators](https://github.com/Nightapes/ngx-validators)
