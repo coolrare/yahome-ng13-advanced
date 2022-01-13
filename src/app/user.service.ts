@@ -1,11 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { forbiddenNameValidator } from './forbidden-name.validator';
+import { emailExist, forbiddenNameValidator } from './forbidden-name.validator';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  email = this.formBuilder.control('', [], emailExist(this.httpClient));
 
   form = this.formBuilder.group({
     firstName: this.formBuilder.control('Mike', [
@@ -28,7 +31,7 @@ export class UserService {
     ]),
   });
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) { }
 
   createUserModel() {
     return this.formBuilder.group({
