@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { forbiddenNameValidator } from './forbidden-name.validator';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ export class UserService {
   form = this.formBuilder.group({
     firstName: this.formBuilder.control('Mike', [
       Validators.required,
-      Validators.minLength(4)
+      Validators.minLength(4),
+      forbiddenNameValidator(/admin/)
     ]),
     lastName: this.formBuilder.control({
       value: '',

@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.form.get('firstName')?.disable();
+    // this.form.get('firstName')?.disable();
     this.form.addControl(
       'email',
       this.formBuilder.control('', [Validators.required, Validators.email])
